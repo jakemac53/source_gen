@@ -18,6 +18,10 @@ dynamic instantiateAnnotation(ElementAnnotationImpl annotation) {
   var annotationObjectImpl = annotation.evaluationResult.value;
   if (annotationObjectImpl.hasExactValue) {
     return annotationObjectImpl.value;
+  } else {
+    print('No exact value!');
+    print('  $annotation ${annotation.runtimeType}');
+    print('  $annotationObjectImpl ${annotationObjectImpl.runtimeType}');
   }
 
   var element = annotation.element;
